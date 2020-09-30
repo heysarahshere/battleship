@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/lobbybackground"
+    tools:context=".Game">
+
+    <TextView
+        android:id="@+id/shipSelectLabel"
+        android:layout_width="57dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:text="Select a Ship"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerShips"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/setupLabel" />
+
+    <TextView
+        android:id="@+id/shipSelectLabel2"
+        android:layout_width="70dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:text="Ship Direction"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shipSelectLabel" />
+
+    <TextView
+        android:id="@+id/setupLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Game Setup"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerShips"
+        android:layout_width="269dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/background_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/setupLabel" />
+
+    <Spinner
+        android:id="@+id/spinnerDirections"
+        android:layout_width="269dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/background_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/shipSelectLabel2"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerShips" />
+
+    <Spinner
+        android:id="@+id/spinnerCols"
+        android:layout_width="122dp"
+        android:layout_height="34dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/background_light"
+        android:entries="@array/cols"
+        app:layout_constraintBaseline_toBaselineOf="@+id/spinnerRows"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/shipSelectLabel3"
+        android:layout_width="64dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:text="Row and Column"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shipSelectLabel2" />
+
+    <Spinner
+        android:id="@+id/spinnerRows"
+        android:layout_width="122dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="22dp"
+        android:background="@android:color/background_light"
+        android:entries="@array/rows"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerCols"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerDirections" />
+
+    <Button
+        android:id="@+id/addShipBtn"
+        android:layout_width="383dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/colorAccent"
+        android:onClick="addShipOnClick"
+        android:text="ADD SHIP"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerRows" />
+
+    <Button
+        android:id="@+id/startAttackingBtn"
+        android:layout_width="383dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/colorAccent"
+        android:onClick="startOnClick"
+        android:text="START GAME"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addShipBtn" />
+
+    <com.scc.battleship.BoardView
+        android:id="@+id/imageDefensiveGrid"
+        android:layout_width="315dp"
+        android:layout_height="336dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startAttackingBtn"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
